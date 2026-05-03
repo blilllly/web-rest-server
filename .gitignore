@@ -2,4 +2,4 @@
 /keys
 .env
 /postgres
-/src/generated/prisma
+/src/data/generated

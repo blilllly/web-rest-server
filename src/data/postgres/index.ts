@@ -1,3 +1,8 @@
-import { PrismaClient } from '@prisma/client/extension';
+import { PrismaPg } from '@prisma/adapter-pg';
+import { PrismaClient } from '../generated/prisma/client';
+import { envs } from '../../config/envs';
+const connectionString = `${envs.POSTGRES_URL}`;
+const adapter = new PrismaPg({ connectionString });
+const prisma = new PrismaClient({ adapter });
 
-export const prisma = new PrismaClient();
+export { prisma };
